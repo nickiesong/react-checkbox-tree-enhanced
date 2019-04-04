@@ -165,3 +165,4 @@ Individual nodes within the `nodes` property can have the following structure:
 | `icon`         | mixed  | A custom icon for the node.              | `null`  |
 | `showCheckbox` | bool   | Whether the node should show a checkbox. | `true`  |
 | `title`        | string | A custom `title` attribute for the node. | `null`  |
+# 
