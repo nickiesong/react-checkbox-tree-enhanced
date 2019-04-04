@@ -6,9 +6,9 @@ $rct-clickable-focus: rgba($rct-icon-color, .2) !default;
 
 .react-checkbox-tree {
   display: flex;
+  position: relative;
   flex-direction: row-reverse;
   font-size: 16px;
-  position: relative;
 
   > ol {
     flex: 1 1 auto;
@@ -91,8 +91,8 @@ $rct-clickable-focus: rgba($rct-icon-color, .2) !default;
 
 .rct-options {
   position: absolute;
-  right: 0;
   top: 0;
+  right: 0;
   margin-left: .5rem;
   text-align: right;
 }
@@ -153,8 +153,8 @@ $rct-clickable-focus: rgba($rct-icon-color, .2) !default;
 }
 
 .rct-node-clickable {
-  position: relative;
   display: flex;
+  position: relative;
   flex: 1;
   cursor: pointer;
 
