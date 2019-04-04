@@ -23,7 +23,8 @@
     "examples": "gulp examples",
     "gh-deploy": "gulp build-gh-pages && bash ./gh-deploy.sh",
     "prepublishOnly": "gulp build",
-    "test": "gulp test-script"
+    "test": "gulp test-script",
+    "lint-app": "eslint src --fix"
   },
   "peerDependencies": {
     "react": "^15.3.0 || ^16.0.0"

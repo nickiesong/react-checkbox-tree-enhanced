@@ -148,7 +148,7 @@ class CheckboxTree extends React.Component {
             this.state.model
                 .clone()
                 .expandAllNodes(expand)
-                .serializeList('expanded')
+                .serializeList('expanded'),
         );
     }
 
@@ -194,7 +194,7 @@ class CheckboxTree extends React.Component {
         const { id, model } = this.state;
         const { icons: defaultIcons } = CheckboxTree.defaultProps;
 
-        const treeNodes = nodes.map(node => {
+        const treeNodes = nodes.map((node) => {
             const key = node.value;
             const flatNode = model.getNode(node.value);
             const children = flatNode.isParent ? this.renderTreeNodes(node.children, node) : null;
@@ -295,7 +295,7 @@ class CheckboxTree extends React.Component {
     renderArrayHiddenInput() {
         const { checked, name: inputName } = this.props;
 
-        return checked.map(value => {
+        return checked.map((value) => {
             const name = `${inputName}[]`;
 
             return <input key={value} name={name} type='hidden' value={value} />;
