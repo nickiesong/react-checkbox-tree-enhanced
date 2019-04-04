@@ -99,10 +99,12 @@ class CheckboxTree extends React.Component {
         this.onCollapseAll = this.onCollapseAll.bind(this);
     }
 
-    componentWillReceiveProps({ nodes, checked, expanded }) {
+    componentWillReceiveProps({
+        nodes, checked, expanded, disabled,
+    }) {
         const { model } = this.state;
 
-        if (!isEqual(this.props.nodes, nodes)) {
+        if (!isEqual(this.props.nodes, nodes) || this.props.disabled !== disabled) {
             model.flattenNodes(nodes);
         }
 
