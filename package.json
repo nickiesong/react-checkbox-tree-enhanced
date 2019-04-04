@@ -1,8 +1,8 @@
 {
-  "name": "react-checkbox-tree",
+  "name": "react-checkbox-tree-enhanced",
   "version": "1.5.6",
-  "description": "A simple and elegant checkbox tree for React.",
-  "author": "Jake Zatecky",
+  "description": "A simple, elegant, and enhanced checkbox tree for React.",
+  "author": "Filip Veličković",
   "license": "MIT",
   "types": "src/index.d.ts",
   "keywords": [
@@ -12,10 +12,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/jakezatecky/react-checkbox-tree"
+    "url": "https://github.com/filipvk/react-checkbox-tree-enhanced"
   },
-  "homepage": "https://jakezatecky.github.io/react-checkbox-tree",
-  "bugs": "https://github.com/jakezatecky/react-checkbox-tree/issues",
+  "bugs": "https://github.com/filipvk/react-checkbox-tree-enhanced/issues",
   "main": "lib/index.js",
   "browser": "lib/index.browser.js",
   "scripts": {
