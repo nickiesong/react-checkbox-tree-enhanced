@@ -23,6 +23,7 @@ class CheckboxTree extends React.Component {
         expanded: listShape,
         icons: iconsShape,
         id: PropTypes.string,
+        initialExpand: PropTypes.bool,
         lang: languageShape,
         name: PropTypes.string,
         nameAsArray: PropTypes.bool,
@@ -68,6 +69,7 @@ class CheckboxTree extends React.Component {
         noCascade: false,
         onlyLeafCheckboxes: false,
         optimisticToggle: true,
+        initialExpand: false,
         showExpandAll: false,
         showNodeIcon: true,
         showNodeTitle: false,
@@ -91,6 +93,10 @@ class CheckboxTree extends React.Component {
             model,
             prevProps: props,
         };
+
+        if (props.initialExpand) {
+            this.expandAllNodes();
+        }
 
         this.onCheck = this.onCheck.bind(this);
         this.onExpand = this.onExpand.bind(this);
