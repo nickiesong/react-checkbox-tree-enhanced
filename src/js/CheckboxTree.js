@@ -100,11 +100,13 @@ class CheckboxTree extends React.Component {
     }
 
     componentWillReceiveProps({ nodes, checked, expanded }) {
+        const { model } = this.state;
+
         if (!isEqual(this.props.nodes, nodes)) {
-            this.flattenNodes(nodes);
+            model.flattenNodes(nodes);
         }
 
-        this.deserializeLists({ checked, expanded });
+        model.deserializeLists({ checked, expanded });
     }
 
     onCheck(nodeInfo) {
