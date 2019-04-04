@@ -73,7 +73,7 @@ describe('<TreeNode />', () => {
                 2: <span className='rct-icon rct-icon-half-check' />,
             };
 
-            Object.keys(iconMap).forEach(state => {
+            Object.keys(iconMap).forEach((state) => {
                 const wrapper = shallow(<TreeNode {...baseProps} checked={parseInt(state, 10)} />);
 
                 assert.isTrue(wrapper.contains(iconMap[state]));
@@ -124,7 +124,7 @@ describe('<TreeNode />', () => {
             const wrapper = shallow(
                 <TreeNode {...baseProps} expanded isLeaf={false}>
                     <TreeNode {...baseProps} label='Europa' value='europa' />
-                </TreeNode>
+                </TreeNode>,
             );
 
             assert.equal('europa', wrapper.find(TreeNode).prop('value'));
@@ -134,7 +134,7 @@ describe('<TreeNode />', () => {
             const wrapper = shallow(
                 <TreeNode {...baseProps} expanded={false} isLeaf={false}>
                     <TreeNode {...baseProps} />
-                </TreeNode>
+                </TreeNode>,
             );
 
             assert.isFalse(wrapper.find(TreeNode).exists());
@@ -177,15 +177,15 @@ describe('<TreeNode />', () => {
     describe('icon', () => {
         it("should replace the node's icons with the supplied value", () => {
             const wrapper = shallow(
-                <TreeNode {...baseProps} icon={<span className='fa fa-plus' />} />
+                <TreeNode {...baseProps} icon={<span className='fa fa-plus' />} />,
             );
 
             assert.isTrue(
                 wrapper.contains(
                     <span className='rct-node-icon'>
                         <span className='fa fa-plus' />
-                    </span>
-                )
+                    </span>,
+                ),
             );
         });
     });
@@ -193,15 +193,15 @@ describe('<TreeNode />', () => {
     describe('icons', () => {
         it('should replace the default set of icons with the provided values', () => {
             const wrapper = shallow(
-                <TreeNode {...baseProps} icons={{ uncheck: <span className='other-uncheck' /> }} />
+                <TreeNode {...baseProps} icons={{ uncheck: <span className='other-uncheck' /> }} />,
             );
 
             assert.isTrue(
                 wrapper.contains(
                     <span className='rct-checkbox'>
                         <span className='other-uncheck' />
-                    </span>
-                )
+                    </span>,
+                ),
             );
         });
     });
@@ -222,8 +222,8 @@ describe('<TreeNode />', () => {
                 wrapper.contains(
                     <span className='rct-checkbox'>
                         <span className='rct-icon rct-icon-uncheck' />
-                    </span>
-                )
+                    </span>,
+                ),
             );
         });
 
@@ -244,8 +244,8 @@ describe('<TreeNode />', () => {
                 wrapper.contains(
                     <span className='rct-node-icon'>
                         <span className='rct-icon rct-icon-leaf' />
-                    </span>
-                )
+                    </span>,
+                ),
             );
         });
 
@@ -256,8 +256,8 @@ describe('<TreeNode />', () => {
                 wrapper.contains(
                     <span className='rct-node-icon'>
                         <span className='rct-icon rct-icon-leaf' />
-                    </span>
-                )
+                    </span>,
+                ),
             );
         });
     });
@@ -278,10 +278,10 @@ describe('<TreeNode />', () => {
                 <TreeNode
                     {...baseProps}
                     value='jupiter'
-                    onCheck={node => {
+                    onCheck={(node) => {
                         actual = node;
                     }}
-                />
+                />,
             );
 
             wrapper.find('NativeCheckbox').simulate('click');
@@ -297,10 +297,10 @@ describe('<TreeNode />', () => {
                     {...baseProps}
                     checked={0}
                     value='jupiter'
-                    onCheck={node => {
+                    onCheck={(node) => {
                         actual = node;
                     }}
-                />
+                />,
             );
 
             wrapper.find('NativeCheckbox').simulate('click');
@@ -316,10 +316,10 @@ describe('<TreeNode />', () => {
                     {...baseProps}
                     checked={1}
                     value='jupiter'
-                    onCheck={node => {
+                    onCheck={(node) => {
                         actual = node;
                     }}
-                />
+                />,
             );
 
             wrapper.find('NativeCheckbox').simulate('click');
@@ -335,10 +335,10 @@ describe('<TreeNode />', () => {
                     {...baseProps}
                     checked={2}
                     value='jupiter'
-                    onCheck={node => {
+                    onCheck={(node) => {
                         actual = node;
                     }}
-                />
+                />,
             );
 
             wrapper.find('NativeCheckbox').simulate('click');
@@ -356,10 +356,10 @@ describe('<TreeNode />', () => {
                         checked={2}
                         optimisticToggle={false}
                         value='jupiter'
-                        onCheck={node => {
+                        onCheck={(node) => {
                             actual = node;
                         }}
-                    />
+                    />,
                 );
 
                 wrapper.find('NativeCheckbox').simulate('click');
@@ -379,10 +379,10 @@ describe('<TreeNode />', () => {
                     expanded
                     isLeaf={false}
                     value='jupiter'
-                    onExpand={node => {
+                    onExpand={(node) => {
                         actual = node;
                     }}
-                />
+                />,
             );
 
             wrapper.find('.rct-collapse').simulate('click');
@@ -411,10 +411,10 @@ describe('<TreeNode />', () => {
                 <TreeNode
                     {...baseProps}
                     value='jupiter'
-                    onClick={node => {
+                    onClick={(node) => {
                         actual = node;
                     }}
-                />
+                />,
             );
 
             wrapper.find('.rct-node-clickable').simulate('click');
@@ -430,10 +430,10 @@ describe('<TreeNode />', () => {
                     {...baseProps}
                     checked={0}
                     value='jupiter'
-                    onClick={node => {
+                    onClick={(node) => {
                         actual = node;
                     }}
-                />
+                />,
             );
 
             wrapper.find('.rct-node-clickable').simulate('click');
@@ -449,10 +449,10 @@ describe('<TreeNode />', () => {
                     {...baseProps}
                     checked={1}
                     value='jupiter'
-                    onClick={node => {
+                    onClick={(node) => {
                         actual = node;
                     }}
-                />
+                />,
             );
 
             wrapper.find('.rct-node-clickable').simulate('click');
@@ -468,10 +468,10 @@ describe('<TreeNode />', () => {
                     {...baseProps}
                     checked={2}
                     value='jupiter'
-                    onClick={node => {
+                    onClick={(node) => {
                         actual = node;
                     }}
-                />
+                />,
             );
 
             wrapper.find('.rct-node-clickable').simulate('click');
