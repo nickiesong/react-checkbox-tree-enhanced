@@ -1,4 +1,5 @@
 $rct-icon-color: #33c !default;
+$rct-option-backcolor: #fff !default;
 $rct-label-hover: rgba($rct-icon-color, .1) !default;
 $rct-label-active: rgba($rct-icon-color, .15) !default;
 $rct-clickable-hover: rgba($rct-icon-color, .1) !default;
@@ -95,6 +96,7 @@ $rct-clickable-focus: rgba($rct-icon-color, .2) !default;
   right: 0;
   z-index: 1;
   margin-left: .5rem;
+  background-color: $rct-option-backcolor;
   text-align: right;
 }
 
@@ -135,6 +137,7 @@ $rct-clickable-focus: rgba($rct-icon-color, .2) !default;
   font-size: 12px;
 
   &.rct-collapse-btn {
+    margin: 0;
     cursor: pointer;
   }
 
