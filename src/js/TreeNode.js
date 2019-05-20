@@ -7,6 +7,11 @@ import NativeCheckbox from './NativeCheckbox';
 import iconsShape from './shapes/iconsShape';
 import languageShape from './shapes/languageShape';
 
+const sanitizeValue = value => String(value)
+    .replace(/[^a-zA-Z0-9 _-]/g, '')
+    .split(' ')
+    .join('-');
+
 class TreeNode extends React.Component {
     static propTypes = {
         checked: PropTypes.number.isRequired,
@@ -204,7 +209,7 @@ class TreeNode extends React.Component {
         const clickable = onClick !== null;
         const inputId = `${treeId}-${String(value)
             .split(' ')
-            .join('-')}`;
+            .join('_')}`;
 
         const render = [
             <label key={0} htmlFor={inputId}>
@@ -282,9 +287,7 @@ class TreeNode extends React.Component {
             },
             className,
         );
-        const textId = `${treeId}-text-${String(value)
-            .split(' ')
-            .join('-')}`;
+        const textId = `${treeId}-text-${sanitizeValue(value)}`;
 
         return (
             <li className={nodeClass}>
