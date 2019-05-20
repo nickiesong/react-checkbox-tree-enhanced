@@ -204,7 +204,7 @@ class TreeNode extends React.Component {
         const clickable = onClick !== null;
         const inputId = `${treeId}-${String(value)
             .split(' ')
-            .join('_')}`;
+            .join('-')}`;
 
         const render = [
             <label key={0} htmlFor={inputId}>
@@ -269,7 +269,7 @@ class TreeNode extends React.Component {
 
     render() {
         const {
-            className, disabled, expanded, isLeaf, title,
+            className, disabled, expanded, isLeaf, title, treeId, value,
         } = this.props;
         const nodeClass = classNames(
             {
@@ -282,10 +282,13 @@ class TreeNode extends React.Component {
             },
             className,
         );
+        const textId = `${treeId}-text-${String(value)
+            .split(' ')
+            .join('-')}`;
 
         return (
             <li className={nodeClass}>
-                <span className='rct-text' title={title}>
+                <span id={textId} className='rct-text' title={title}>
                     {this.renderCollapseButton()}
                     {this.renderLabel()}
                 </span>
